@@ -10,22 +10,20 @@ _b BYTE 0
 _c BYTE 1
 _d BYTE 0
 
-first_eqe BYTE ?
 S BYTE ?
 T BYTE ?
 
 .code
 main proc
 
-  mov al, _b
-  xor al, 1
-  or al, _a
-  mov first_eqe, al
+  mov bl, _b
+  xor bl, 1
+  or bl, _a
 
   mov al, _c
   xor al, 1
   or al, _a
-  and al, first_eqe
+  and al, bl
   mov T, al
 
   mov al, _b
