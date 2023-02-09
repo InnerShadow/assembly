@@ -6,31 +6,29 @@ ExitProcess proto, dwExitCode:dword
 
 .data
 
-_a SDWORD 4
-_b SDWORD 2
-_c SDWORD 1
+_a SDWORD 6
+_b SDWORD 4
+_c SDWORD 2
+four SDWORD 4
 
-first_sub_plus_pow SDWORD ?
-lat_part SDWORD ?
+first_bracket SDWORD ?
+last_bracket SDWORD ?
 final_value SDWORD ?
 
 .code
 main proc
 
-	mov eax, _a
-	sub eax, _c
-	mul eax
-	mov first_sub_plus_pow, eax
+	mov eax, _c
+	sub eax, 1
+	mov last_bracket, eax
 
-	mov eax, 2
-	mul _a
-	mul _c
+	mov eax, _b
 	mov edx, 0
-	div _b
-	mov lat_part, eax
-
-	mov eax, first_sub_plus_pow
-	add eax, lat_part
+	div four
+	add eax, _a
+	mov edx, 0
+	div last_bracket
+	mul _a
 	mov final_value, eax
 
 
