@@ -9,26 +9,24 @@ ExitProcess proto, dwExitCode:dword
 _a SDWORD 6
 _b SDWORD 4
 _c SDWORD 2
-four SDWORD 4
 
-first_bracket SDWORD ?
-last_bracket SDWORD ?
 final_value SDWORD ?
 
 .code
 main proc
 
-	mov eax, _c
-	sub eax, 1
-	mov last_bracket, eax
+	mov ebx, _c
+	sub ebx, 1
 
 	mov eax, _b
 	mov edx, 0
-	div four
+	mov ecx, 4
+	div ecx
 	add eax, _a
 	mov edx, 0
-	div last_bracket
+	div ebx
 	mul _a
+
 	mov final_value, eax
 
 
