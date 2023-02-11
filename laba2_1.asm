@@ -25,37 +25,33 @@ main proc
 		mov eax, _x1
 		cmp eax, _x2
 		jg More1
-		mov ebx, _x1
-		mov ecx, _x2
-		mov _x1, ecx
-		mov _x2, ebx
+			mov ebx, _x1
+			mov ecx, _x2
+			mov _x1, ecx
+			mov _x2, ebx
 		More1:
-		jmp EndOfIf1
-		EndOfIf1:
 
 		mov eax, _x2
 		cmp eax, _x3
 		jg More2
-		mov ebx, _x2
-		mov ecx, _x3
-		mov _x2, ecx
-		mov _x3, ebx
+			mov ebx, _x2
+			mov ecx, _x3
+			mov _x2, ecx
+			mov _x3, ebx
 		More2:
-		jmp EndOfIf2
-		EndOfIf2:
 
 		mov eax, _x3
 		cmp eax, _x4
 		jg More3
-		mov ebx, _x3
-		mov ecx, _x4
-		mov _x3, ecx
-		mov _x4, ebx
+			mov ebx, _x3
+			mov ecx, _x4
+			mov _x3, ecx
+			mov _x4, ebx
 		More3:
-		jmp EndOfIf3
+			jmp EndOfIf3
 		EndOfIf3:
-		inc it
-		jmp BeginWile
+			inc it
+			jmp BeginWile
 	EndWhile:
 		mov it, eax
 
