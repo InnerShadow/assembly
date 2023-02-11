@@ -18,9 +18,9 @@ main proc
 	mov ebx, _c
 	sub ebx, 1
 
+	mov ecx, 4
 	mov eax, _b
 	mov edx, 0
-	mov ecx, 4
 	div ecx
 	add eax, _a
 	mov edx, 0
