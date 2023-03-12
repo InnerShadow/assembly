@@ -14,7 +14,7 @@ void m_2_4() {
 	int num = 3231;
 	bool sign = task2_4(num);
 	if (sign) {
-		std::cout << "There are no same digits in thi number!\n";
+		std::cout << "There are no same digits in this number!\n";
 	} else {
 		std::cout << "There are same digits in this number!\n";
 	}
