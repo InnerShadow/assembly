@@ -6,7 +6,7 @@ ExitProcess proto, dwExitCode:dword
 
 .data
 
-array DWORD 9, 8, 7, 6, 5; Отсортировать массив методом выбора.
+array DWORD 5, 6, 7, 8, 10; Отсортировать массив методом выбора.
 decrement DWORD 1
 
 .code
@@ -44,13 +44,7 @@ main proc
 	loop L1
 	Exit:
 
-	mov edi, OFFSET array
-	mov ecx, LENGTHOF array
-
-	L3:
-		mov eax, [edi]
-		add edi, 4
-	loop L3
+	mov eax, OFFSET array
 
 	invoke ExitProcess, 0
 

@@ -6,10 +6,7 @@ ExitProcess proto, dwExitCode:dword
 
 .data
 
-arr SDWORD 1, 2, 3, 4, 1, 5, 6, 3, 1, 10, 341, 341
-
-saveEDI SDWORD 0
-globalLoopIt SDWORD 0
+arr SDWORD 1, 1, 2, 2, 3, 3 ; Найти сумму тех элементов массива, которые встречаются по одному разу
 
 sum SDWORD 0
 
@@ -22,8 +19,8 @@ main proc
 	Loop1:
 		mov eax, [edi]
 
-		mov globalLoopIt, ecx
-		mov saveEDI, edi
+		push ecx
+		push edi
 		
 		mov edi, OFFSET arr
 		mov ecx, LENGTHOF arr
@@ -32,24 +29,25 @@ main proc
 		Loop2:
 			mov ebx, [edi]
 			cmp eax, ebx
-			jne cond
+			jne CONDTITION1
 				inc edx
-			cond:
+			CONDTITION1:
 			add edi, TYPE arr 
-		loop Loop2
+		;loop Loop2
+		dec ecx
+		cmp ecx, 0
+		jne Loop2
 
 		cmp edx, 1
-		jne cond1
+		jne CONDITION2
 			mov ebx, sum
 			add ebx, eax
 			mov sum, ebx
-		cond1:
-			mov edi, saveEDI
-			mov ecx, globalLoopIt
+		CONDITION2:
+			pop edi
+			pop ecx
 			add edi, TYPE arr
 	loop Loop1
-
-	mov eax, sum
 
 	invoke ExitProcess,0
 

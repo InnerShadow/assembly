@@ -8,7 +8,7 @@ ExitProcess proto, dwExitCode:dword
 
 tableD DWORD 1, 2, 3
 RowSize = ($ - tableD)
-DWORD 6, 7, 8
+DWORD 2, 7, 8
 DWORD 4, 5, 10
 
 it DWORD 0
