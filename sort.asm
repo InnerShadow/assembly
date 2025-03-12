@@ -2,6 +2,11 @@
 .code
 
 .data
+<<<<<<< HEAD:sort.asm
+=======
+
+array DWORD 5, 6, 7, 8, 10; Отсортировать массив методом выбора.
+>>>>>>> origin/laba3:laba3_2.asm
 decrement DWORD 1
 len DWORD ?
 
@@ -46,6 +51,7 @@ ASMsort proc
 	loop L1
 	Exit:
 
+<<<<<<< HEAD:sort.asm
 	pop edi
 	pop edi
 	mov eax, edi
@@ -54,3 +60,11 @@ ASMsort proc
 	ret
 ASMsort endp
 end
+=======
+	mov eax, OFFSET array
+
+	invoke ExitProcess, 0
+
+main endp
+end main
+>>>>>>> origin/laba3:laba3_2.asm
